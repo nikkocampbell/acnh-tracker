@@ -45,11 +45,17 @@
         </b-form-group>
       </b-col>
       <b-col cols="3">
-        <b-form-group label="Only Show Catchable" label-cols="8">
+        <b-form-group label="Only Show Catchable" label-cols="8" class="my-0">
           <b-form-checkbox v-model="onlyCatchable" />
         </b-form-group>
-        <b-form-group label="Only Show Uncaught" label-cols="8">
+        <b-form-group label="Only Show Uncaught" label-cols="8" class="my-0">
           <b-form-checkbox v-model="onlyUncaught"/>
+        </b-form-group>
+        <b-form-group label="New this month" label-cols="8" class="my-0">
+          <b-form-checkbox v-model="newThisMonth"/>
+        </b-form-group>
+        <b-form-group label="Leaving this month" label-cols="8" class="my-0">
+          <b-form-checkbox v-model="leavingThisMonth"/>
         </b-form-group>
       </b-col>
     </b-row>
@@ -119,6 +125,8 @@ export default {
       ignoreTime: false,
       onlyCatchable: false,
       onlyUncaught: false,
+      newThisMonth: false,
+      leavingThisMonth: false,
 
       monthOptions: [
         { text: 'January', value: 1 },
@@ -141,9 +149,18 @@ export default {
       const today = new Date();
       return `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
     },
-    shouldShowCatchable({ canCatch, caught }) {
-      if (this.onlyCatchable && !canCatch) return false;
-      if (this.onlyUncaught && caught) return false;
+    shouldShowCatchable(catchable) {
+      if (this.onlyCatchable && !catchable.canCatch) return false;
+      if (this.onlyUncaught && catchable.caught) return false;
+      if (this.newThisMonth) {
+        const starting = catchable.months[this.hemisphere].some((m) => m.start === this.month);
+        if (!starting) return false;
+      }
+      if (this.leavingThisMonth) {
+        const ending = catchable.months[this.hemisphere].some((m) => m.end === this.month);
+        if (!ending) return false;
+      }
+
       return true;
     },
     saveState() {
