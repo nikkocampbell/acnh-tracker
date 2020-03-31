@@ -139,7 +139,7 @@ export default JSON.parse(`[
     "name": "Koi",
     "location": "Pond",
     "size": "Large",
-    "price": "4,000",
+    "price": 4000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -166,7 +166,7 @@ export default JSON.parse(`[
     "name": "Goldfish",
     "location": "Pond",
     "size": "Smallest",
-    "price": "1,300",
+    "price": 1300,
     "time": {
       "allDay": true,
       "start": null,
@@ -193,7 +193,7 @@ export default JSON.parse(`[
     "name": "Pop-eyed Goldfish",
     "location": "Pond",
     "size": "Smallest",
-    "price": "1,300",
+    "price": 1300,
     "time": {
       "allDay": false,
       "start": 9,
@@ -220,7 +220,7 @@ export default JSON.parse(`[
     "name": "Ranchu Goldfish",
     "location": "Pond",
     "size": "Small",
-    "price": "4,500",
+    "price": 4500,
     "time": {
       "allDay": false,
       "start": 9,
@@ -301,7 +301,7 @@ export default JSON.parse(`[
     "name": "Soft-shelled Turtle",
     "location": "River",
     "size": "Large",
-    "price": "3,750",
+    "price": 3750,
     "time": {
       "allDay": false,
       "start": 16,
@@ -328,7 +328,7 @@ export default JSON.parse(`[
     "name": "Snapping Turtle",
     "location": "River",
     "size": "X Large",
-    "price": "5,000",
+    "price": 5000,
     "time": {
       "allDay": false,
       "start": 9,
@@ -490,7 +490,7 @@ export default JSON.parse(`[
     "name": "Giant Snakehead",
     "location": "Pond",
     "size": "X Large",
-    "price": "5,500",
+    "price": 5500,
     "time": {
       "allDay": false,
       "start": 9,
@@ -625,7 +625,7 @@ export default JSON.parse(`[
     "name": "Pike",
     "location": "River",
     "size": "X Large",
-    "price": "1,800",
+    "price": 1800,
     "time": {
       "allDay": true,
       "start": null,
@@ -706,7 +706,7 @@ export default JSON.parse(`[
     "name": "Cherry Salmon",
     "location": "River (Clifftop)",
     "size": "Medium",
-    "price": "1,000",
+    "price": 1000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -741,7 +741,7 @@ export default JSON.parse(`[
     "name": "Char",
     "location": "River (Clifftop)",
     "size": "Medium",
-    "price": "3,800",
+    "price": 3800,
     "time": {
       "allDay": false,
       "start": 16,
@@ -776,7 +776,7 @@ export default JSON.parse(`[
     "name": "Golden Trout",
     "location": "River (Clifftop)",
     "size": "Medium",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -811,7 +811,7 @@ export default JSON.parse(`[
     "name": "Stringfish",
     "location": "River (Clifftop)",
     "size": "Largest",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -865,7 +865,7 @@ export default JSON.parse(`[
     "name": "King Salmon",
     "location": "River (mouth)",
     "size": "Smallest",
-    "price": "1,800",
+    "price": 1800,
     "time": {
       "allDay": true,
       "start": null,
@@ -892,7 +892,7 @@ export default JSON.parse(`[
     "name": "Mitten Crab",
     "location": "River",
     "size": "Small",
-    "price": "2,000",
+    "price": 2000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -919,7 +919,7 @@ export default JSON.parse(`[
     "name": "Guppy",
     "location": "River",
     "size": "Smallest",
-    "price": "1,300",
+    "price": 1300,
     "time": {
       "allDay": false,
       "start": 9,
@@ -946,7 +946,7 @@ export default JSON.parse(`[
     "name": "Nibble Fish",
     "location": "River",
     "size": "Small",
-    "price": "1,500",
+    "price": 1500,
     "time": {
       "allDay": false,
       "start": 9,
@@ -973,7 +973,7 @@ export default JSON.parse(`[
     "name": "Angelfish",
     "location": "River",
     "size": "Small",
-    "price": "3,000",
+    "price": 3000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -1000,7 +1000,7 @@ export default JSON.parse(`[
     "name": "Betta",
     "location": "River",
     "size": "Small",
-    "price": "2,500",
+    "price": 2500,
     "time": {
       "allDay": false,
       "start": 9,
@@ -1081,7 +1081,7 @@ export default JSON.parse(`[
     "name": "Piranha",
     "location": "River",
     "size": "Small",
-    "price": "2,500",
+    "price": 2500,
     "time": {
       "allDay": false,
       "start": 9,
@@ -1108,7 +1108,7 @@ export default JSON.parse(`[
     "name": "Arowana",
     "location": "River",
     "size": "Large",
-    "price": "10,000",
+    "price": 10000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -1135,7 +1135,7 @@ export default JSON.parse(`[
     "name": "Dorado",
     "location": "River",
     "size": "X Large",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": false,
       "start": 4,
@@ -1162,7 +1162,7 @@ export default JSON.parse(`[
     "name": "Gar",
     "location": "Pond",
     "size": "Largest",
-    "price": "6,000",
+    "price": 6000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -1189,7 +1189,7 @@ export default JSON.parse(`[
     "name": "Arapaima",
     "location": "River",
     "size": "Largest",
-    "price": "10,000",
+    "price": 10000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -1216,7 +1216,7 @@ export default JSON.parse(`[
     "name": "Saddled Bichir",
     "location": "River",
     "size": "Large",
-    "price": "4,000",
+    "price": 4000,
     "time": {
       "allDay": false,
       "start": 21,
@@ -1243,7 +1243,7 @@ export default JSON.parse(`[
     "name": "Sturgeon",
     "location": "River (mouth)",
     "size": "Largest",
-    "price": "10,000",
+    "price": 10000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1270,7 +1270,7 @@ export default JSON.parse(`[
     "name": "Sea Butterfly",
     "location": "Sea",
     "size": "Smallest",
-    "price": "1,000",
+    "price": 1000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1297,7 +1297,7 @@ export default JSON.parse(`[
     "name": "Sea Horse",
     "location": "Sea",
     "size": "Smallest",
-    "price": "1,100",
+    "price": 1100,
     "time": {
       "allDay": true,
       "start": null,
@@ -1351,7 +1351,7 @@ export default JSON.parse(`[
     "name": "Surgeonfish",
     "location": "Sea",
     "size": "Small",
-    "price": "1,000",
+    "price": 1000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1378,7 +1378,7 @@ export default JSON.parse(`[
     "name": "Butterfly Fish",
     "location": "Sea",
     "size": "Small",
-    "price": "1,000",
+    "price": 1000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1405,7 +1405,7 @@ export default JSON.parse(`[
     "name": "Napoleonfish",
     "location": "Sea",
     "size": "Largest",
-    "price": "10,000",
+    "price": 10000,
     "time": {
       "allDay": false,
       "start": 4,
@@ -1459,7 +1459,7 @@ export default JSON.parse(`[
     "name": "Blowfish",
     "location": "Sea",
     "size": "Medium",
-    "price": "5,000",
+    "price": 5000,
     "time": {
       "allDay": false,
       "start": 18,
@@ -1567,7 +1567,7 @@ export default JSON.parse(`[
     "name": "Barred Knifejaw",
     "location": "Sea",
     "size": "Medium",
-    "price": "5,000",
+    "price": 5000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1621,7 +1621,7 @@ export default JSON.parse(`[
     "name": "Red Snapper",
     "location": "Sea",
     "size": "Large",
-    "price": "3,000",
+    "price": 3000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1729,7 +1729,7 @@ export default JSON.parse(`[
     "name": "Moray Eel",
     "location": "Sea",
     "size": "X Large",
-    "price": "2,000",
+    "price": 2000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1783,7 +1783,7 @@ export default JSON.parse(`[
     "name": "Tuna",
     "location": "Pier",
     "size": "X Large",
-    "price": "7,000",
+    "price": 7000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1810,7 +1810,7 @@ export default JSON.parse(`[
     "name": "Blue Marlin",
     "location": "Pier",
     "size": "X Large",
-    "price": "10,000",
+    "price": 10000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1845,7 +1845,7 @@ export default JSON.parse(`[
     "name": "Giant Trevally",
     "location": "Pier",
     "size": "Large",
-    "price": "4,500",
+    "price": 4500,
     "time": {
       "allDay": true,
       "start": null,
@@ -1872,7 +1872,7 @@ export default JSON.parse(`[
     "name": "Mahi-mahi",
     "location": "Sea",
     "size": "Large",
-    "price": "6,000",
+    "price": 6000,
     "time": {
       "allDay": true,
       "start": null,
@@ -1899,7 +1899,7 @@ export default JSON.parse(`[
     "name": "Ocean Sunfish",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "4,000",
+    "price": 4000,
     "time": {
       "allDay": false,
       "start": 4,
@@ -1926,7 +1926,7 @@ export default JSON.parse(`[
     "name": "Ray",
     "location": "Sea",
     "size": "X Large",
-    "price": "3,000",
+    "price": 3000,
     "time": {
       "allDay": false,
       "start": 4,
@@ -1953,7 +1953,7 @@ export default JSON.parse(`[
     "name": "Saw Shark",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "12,000",
+    "price": 12000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -1980,7 +1980,7 @@ export default JSON.parse(`[
     "name": "Hammerhead Shark",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "8,000",
+    "price": 8000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -2007,7 +2007,7 @@ export default JSON.parse(`[
     "name": "Great White Shark",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": false,
       "start": 16,
@@ -2034,7 +2034,7 @@ export default JSON.parse(`[
     "name": "Whale Shark",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "13,000",
+    "price": 13000,
     "time": {
       "allDay": true,
       "start": null,
@@ -2061,7 +2061,7 @@ export default JSON.parse(`[
     "name": "Suckerfish",
     "location": "Sea",
     "size": "Largest (Fin)",
-    "price": "1,500",
+    "price": 1500,
     "time": {
       "allDay": true,
       "start": null,
@@ -2088,7 +2088,7 @@ export default JSON.parse(`[
     "name": "Football Fish",
     "location": "Sea",
     "size": "Large",
-    "price": "2,500",
+    "price": 2500,
     "time": {
       "allDay": false,
       "start": 16,
@@ -2115,7 +2115,7 @@ export default JSON.parse(`[
     "name": "Oarfish",
     "location": "Sea",
     "size": "Largest",
-    "price": "9,000",
+    "price": 9000,
     "time": {
       "allDay": true,
       "start": null,
@@ -2142,7 +2142,7 @@ export default JSON.parse(`[
     "name": "Barreleye",
     "location": "Sea",
     "size": "Small",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": false,
       "start": 21,
@@ -2169,7 +2169,7 @@ export default JSON.parse(`[
     "name": "Coelacanth",
     "location": "Sea (rainy days)",
     "size": "Largest",
-    "price": "15,000",
+    "price": 15000,
     "time": {
       "allDay": true,
       "start": null,
