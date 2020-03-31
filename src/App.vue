@@ -58,11 +58,13 @@
         <b-button
           @click="saveState"
           variant="primary"
+           class="mr-2"
         >
           Save
         </b-button>
-        <b-button @click="exportState" class="mx-2">Export</b-button>
-        <b-button @click="importState">Import</b-button>
+        <b-button @click="exportState" class="mr-2">Export</b-button>
+        <b-button @click="importState" class="mr-2">Import</b-button>
+        <b-button @click="clear" variant="danger" class="mr-2">Clear</b-button>
         <b-textarea v-model="exportContent" class="mt-3"/>
       </b-col>
     </b-row>
@@ -158,6 +160,12 @@ export default {
     exportState() {
       this.exportContent = JSON.stringify(this.$store.state);
     },
+    clear() {
+      const confirm = window.confirm('Are you sure? This will clear all data!');
+      if (!confirm) return;
+      localStorage.removeItem('state');
+      window.location.reload();
+    },
   },
   computed: {
     ...mapState(['fish', 'bugs']),
@@ -177,7 +185,7 @@ export default {
     },
   },
   created() {
-    // this.loadState();
+    this.loadState();
   },
 };
 </script>
