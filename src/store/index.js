@@ -34,6 +34,10 @@ export default new Vuex.Store({
       const index = state[list].findIndex((i) => i.id === id);
       state[list][index].canCatch = value;
     },
+    updateCaught(state, { id, value, list }) {
+      const index = state[list].findIndex((i) => i.id === id);
+      state[list][index].caught = value;
+    },
   },
   actions: {
     updateHemisphere({ commit }, value) {
@@ -47,6 +51,9 @@ export default new Vuex.Store({
     },
     updateCanCatch({ commit }, { id, value, list }) {
       commit('updateCanCatch', { id, value, list });
+    },
+    updateCaught({ commit }, { id, value, list }) {
+      commit('updateCaught', { id, value, list });
     },
   },
   modules: {

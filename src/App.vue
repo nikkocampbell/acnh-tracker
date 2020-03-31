@@ -35,6 +35,13 @@
             v-model="time"
           />
         </b-form-group>
+
+        <b-form-group label="Only Show Catchable">
+          <b-form-checkbox v-model="onlyCatchable" />
+        </b-form-group>
+        <b-form-group label="Only Show Uncaught">
+          <b-form-checkbox v-model="onlyUncaught"/>
+        </b-form-group>
       </b-col>
     </b-row>
     <b-row>
@@ -43,6 +50,7 @@
         <b-card
           v-for="f in fish"
           :key="f.id"
+          v-show="shouldShowCatchable(f)"
         >
           <catchable :value="f" list="fish"/>
         </b-card>
@@ -70,6 +78,9 @@ export default {
 
   data() {
     return {
+      onlyCatchable: false,
+      onlyUncaught: false,
+
       monthOptions: [
         { text: 'January', value: 1 },
         { text: 'February', value: 2 },
@@ -90,6 +101,11 @@ export default {
     currentTime() {
       const today = new Date();
       return `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+    },
+    shouldShowCatchable({ canCatch, caught }) {
+      if (this.onlyCatchable && !canCatch) return false;
+      if (this.onlyUncaught && caught) return false;
+      return true;
     },
   },
   computed: {

@@ -6,6 +6,11 @@
     Months: {{ formattedMonths }}
     <br />
     Times: {{ formattedTimes }}
+    <br />
+    <b-row></b-row>
+    <b-form-group label="Caught" label-cols="1">
+      <b-form-checkbox v-model="caught"/>
+    </b-form-group>
   </div>
 </template>
 
@@ -23,6 +28,19 @@ export default {
   computed: {
     ...mapState(['hemisphere', 'month']),
     ...mapGetters(['hour']),
+
+    caught: {
+      get() {
+        return this.value.caught;
+      },
+      set(value) {
+        this.$store.dispatch('updateCaught', {
+          id: this.value.id,
+          value,
+          list: this.list,
+        });
+      },
+    },
 
     isCatchable() {
       return this.isCatchableTime && this.isCatchableMonth;
