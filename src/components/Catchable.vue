@@ -1,7 +1,7 @@
 <template>
   <div style="">
     <b-icon :icon="catchableIcon" />
-    {{ value.name }}
+    {{ value.id }} {{ value.name }}
     <br />
     Months: {{ formattedMonths }}
     <br />
@@ -10,21 +10,20 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
 import { months } from '../constants';
 
 export default {
   name: 'Catchable',
   props: {
     value: Object,
-    hemisphere: {
-      type: String,
-      default: 'north',
-    },
-    hour: Number,
-    month: Number,
+    list: String,
   },
 
   computed: {
+    ...mapState(['hemisphere', 'month']),
+    ...mapGetters(['hour']),
+
     isCatchable() {
       return this.isCatchableTime && this.isCatchableMonth;
     },
@@ -78,6 +77,19 @@ export default {
       if (time === 12) return `${time} pm`;
       if (time > 12) return `${time - 12} pm`;
       return `${time} am`;
+    },
+  },
+
+  watch: {
+    isCatchable: {
+      immediate: true,
+      handler(newVal) {
+        this.$store.dispatch('updateCanCatch', {
+          id: this.value.id,
+          value: newVal,
+          list: this.list,
+        });
+      },
     },
   },
 };

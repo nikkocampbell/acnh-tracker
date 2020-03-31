@@ -44,12 +44,7 @@
           v-for="f in fish"
           :key="f.id"
         >
-          <catchable
-            :value="f"
-            :hemisphere="hemisphere"
-            :month="month"
-            :hour="hour"
-          />
+          <catchable :value="f" list="fish"/>
         </b-card>
       </b-col>
       <!-- <b-col>
@@ -63,8 +58,8 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
 import Catchable from './components/Catchable.vue';
-import fish from './data/fish';
 
 export default {
   name: 'App',
@@ -75,14 +70,6 @@ export default {
 
   data() {
     return {
-      hemisphere: 'north',
-      month: 1,
-      time: this.currentTime(),
-
-      fish,
-      // bugs: data.bugs,
-      // fossils: data.fossils,
-
       monthOptions: [
         { text: 'January', value: 1 },
         { text: 'February', value: 2 },
@@ -106,8 +93,20 @@ export default {
     },
   },
   computed: {
-    hour() {
-      return parseInt(this.time.split(':')[0], 10);
+    ...mapState(['fish']),
+    ...mapGetters(['hour']),
+
+    hemisphere: {
+      get() { return this.$store.state.hemisphere; },
+      set(value) { this.$store.dispatch('updateHemisphere', value); },
+    },
+    time: {
+      get() { return this.$store.state.time; },
+      set(value) { this.$store.dispatch('updateTime', value); },
+    },
+    month: {
+      get() { return this.$store.state.month; },
+      set(value) { this.$store.dispatch('updateMonth', value); },
     },
   },
 };
