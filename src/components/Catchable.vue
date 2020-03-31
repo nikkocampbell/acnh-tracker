@@ -1,16 +1,38 @@
 <template>
   <div style="">
-    <b-icon :icon="catchableIcon" />
-    {{ value.id }} {{ value.name }}
-    <br />
-    Months: {{ formattedMonths }}
-    <br />
-    Times: {{ formattedTimes }}
-    <br />
-    <b-row></b-row>
-    <b-form-group label="Caught" label-cols="1">
-      <b-form-checkbox v-model="caught"/>
-    </b-form-group>
+    <b-row>
+      <b-col>
+        <b-icon :icon="catchableIcon" />
+        {{ value.id }} {{ value.name }}
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col cols="2">
+        <span>
+          Months: {{ formattedMonths }}
+        </span>
+        <br />
+        <span>
+          Times: {{ formattedTimes }}
+        </span>
+      </b-col>
+      <b-col>
+        <span>
+          Location: {{ value.location }}
+        </span>
+        <br />
+        <span>
+          Size: {{ value.size}}
+        </span>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-form-group label="Caught" label-cols="1" class="mb-0">
+          <b-form-checkbox v-model="caught"/>
+        </b-form-group>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
