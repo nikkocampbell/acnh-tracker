@@ -36,7 +36,7 @@ export default {
         return this.value.time.start <= this.hour && this.hour < this.value.time.end;
       }
 
-      return this.value.time.end <= this.hour || this.hour < this.value.time.end;
+      return this.value.time.end > this.hour || this.hour >= this.value.time.start;
     },
 
     isCatchableMonth() {
@@ -46,7 +46,7 @@ export default {
         return this.months.start <= this.month && this.month <= this.months.end;
       }
 
-      return this.months.end <= this.month || this.month <= this.months.start;
+      return this.months.end >= this.month || this.month >= this.months.start;
     },
 
     catchableIcon() {
