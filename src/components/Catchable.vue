@@ -60,7 +60,7 @@ export default {
       if (this.months.allYear) return true;
 
       return this.months.ranges.some((range) => {
-        if (range.start < range.end) {
+        if (range.start <= range.end) {
           return this.month >= range.start && this.month <= range.end;
         }
         return this.month >= range.start || this.month <= range.end;
