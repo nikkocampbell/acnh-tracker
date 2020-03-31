@@ -23,6 +23,7 @@ export default {
   props: {
     value: Object,
     list: String,
+    ignoreTime: Boolean,
   },
 
   computed: {
@@ -47,6 +48,7 @@ export default {
     },
 
     isCatchableTime() {
+      if (this.ignoreTime) return true;
       if (this.value.time.allDay) return true;
 
       if (this.value.time.start <= this.value.time.end) {

@@ -39,6 +39,10 @@
             v-model="time"
           />
         </b-form-group>
+
+        <b-form-group label="Ignore Time" label-cols="4">
+          <b-form-checkbox v-model="ignoreTime"/>
+        </b-form-group>
       </b-col>
       <b-col cols="3">
         <b-form-group label="Only Show Catchable" label-cols="8">
@@ -70,7 +74,7 @@
           :key="f.id"
           v-show="shouldShowCatchable(f)"
         >
-          <catchable :value="f" list="fish"/>
+          <catchable :value="f" list="fish" :ignoreTime="ignoreTime" />
         </b-card>
       </b-col>
       <!-- <b-col>
@@ -98,6 +102,7 @@ export default {
     return {
       exportContent: '',
 
+      ignoreTime: false,
       onlyCatchable: false,
       onlyUncaught: false,
 
