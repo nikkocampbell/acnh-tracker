@@ -31,7 +31,12 @@ export default {
 
     isCatchableTime() {
       if (this.value.time.allDay) return true;
-      return this.value.time.start <= this.hour && this.hour < this.value.time.end;
+
+      if (this.value.time.start <= this.value.time.end) {
+        return this.value.time.start <= this.hour && this.hour < this.value.time.end;
+      }
+
+      return this.value.time.end <= this.hour || this.hour < this.value.time.end;
     },
 
     isCatchableMonth() {
