@@ -51,6 +51,19 @@
     </b-row>
     <b-row>
       <b-col>
+        <b-button
+          @click="saveState"
+          variant="primary"
+        >
+          Save
+        </b-button>
+        <b-button @click="exportState" class="mx-2">Export</b-button>
+        <b-button @click="importState">Import</b-button>
+        <b-textarea v-model="exportContent" class="mt-3"/>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
         <h4>Fish</h4>
         <b-card
           v-for="f in fish"
@@ -83,6 +96,8 @@ export default {
 
   data() {
     return {
+      exportContent: '',
+
       onlyCatchable: false,
       onlyUncaught: false,
 
@@ -112,6 +127,20 @@ export default {
       if (this.onlyUncaught && caught) return false;
       return true;
     },
+    saveState() {
+      localStorage.setItem('state', JSON.stringify(this.$store.state));
+    },
+    loadState() {
+      const loadedState = JSON.parse(localStorage.getItem('state'));
+      if (!loadedState) return;
+      this.$store.replaceState(loadedState);
+    },
+    importState() {
+      this.$store.replaceState(JSON.parse(this.exportContent));
+    },
+    exportState() {
+      this.exportContent = JSON.stringify(this.$store.state);
+    },
   },
   computed: {
     ...mapState(['fish']),
@@ -129,6 +158,9 @@ export default {
       get() { return this.$store.state.month; },
       set(value) { this.$store.dispatch('updateMonth', value); },
     },
+  },
+  created() {
+    this.loadState();
   },
 };
 </script>
