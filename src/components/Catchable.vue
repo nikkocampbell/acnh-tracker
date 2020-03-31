@@ -33,20 +33,20 @@ export default {
       if (this.value.time.allDay) return true;
 
       if (this.value.time.start <= this.value.time.end) {
-        return this.value.time.start <= this.hour && this.hour < this.value.time.end;
+        return this.hour >= this.value.time.start && this.hour < this.value.time.end;
       }
 
-      return this.value.time.end > this.hour || this.hour >= this.value.time.start;
+      return this.hour >= this.value.time.start || this.hour < this.value.time.end;
     },
 
     isCatchableMonth() {
       if (this.months.allYear) return true;
 
       if (this.months.start <= this.months.end) {
-        return this.months.start <= this.month && this.month <= this.months.end;
+        return this.month >= this.months.start && this.month <= this.months.end;
       }
 
-      return this.months.end >= this.month || this.month >= this.months.start;
+      return this.month >= this.months.start || this.month <= this.months.end;
     },
 
     catchableIcon() {
