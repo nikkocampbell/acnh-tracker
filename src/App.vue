@@ -7,7 +7,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
+      <b-col cols="3">
         <b-form-group label="Hemisphere">
           <b-form-radio
             v-model="hemisphere"
@@ -24,10 +24,14 @@
             South
           </b-form-radio>
         </b-form-group>
+      </b-col>
+      <b-col cols="3">
 
         <b-form-group label="Month">
           <b-select v-model="month" :options="monthOptions" />
         </b-form-group>
+      </b-col>
+      <b-col cols="3">
 
         <b-form-group label="Time">
           <b-form-timepicker
@@ -35,11 +39,12 @@
             v-model="time"
           />
         </b-form-group>
-
-        <b-form-group label="Only Show Catchable">
+      </b-col>
+      <b-col cols="3">
+        <b-form-group label="Only Show Catchable" label-cols="8">
           <b-form-checkbox v-model="onlyCatchable" />
         </b-form-group>
-        <b-form-group label="Only Show Uncaught">
+        <b-form-group label="Only Show Uncaught" label-cols="8">
           <b-form-checkbox v-model="onlyUncaught"/>
         </b-form-group>
       </b-col>
@@ -54,7 +59,7 @@
         >
           <catchable :value="f" list="fish"/>
         </b-card>
-      </b-col>
+      </h4>
       <!-- <b-col>
         <h4>Bugs</h4>
       </b-col>
