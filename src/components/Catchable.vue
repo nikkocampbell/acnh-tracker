@@ -59,11 +59,12 @@ export default {
     isCatchableMonth() {
       if (this.months.allYear) return true;
 
-      if (this.months.start <= this.months.end) {
-        return this.month >= this.months.start && this.month <= this.months.end;
-      }
-
-      return this.month >= this.months.start || this.month <= this.months.end;
+      return this.months.ranges.some((range) => {
+        if (range.start < range.end) {
+          return this.month >= range.start && this.month <= range.end;
+        }
+        return this.month >= range.start || this.month <= range.end;
+      });
     },
 
     catchableIcon() {
@@ -74,14 +75,18 @@ export default {
     months() {
       return {
         allYear: this.value.months.allYear,
-        ...this.value.months[this.hemisphere],
+        ranges: this.value.months[this.hemisphere],
       };
     },
 
     formattedMonths() {
       if (this.months.allYear) return 'All Year';
-      if (this.months.start === this.months.end) return months[this.months.start];
-      return `${months[this.months.start]} - ${months[this.months.end]}`;
+      return this.months.ranges
+        .map((m) => {
+          if (m.start === m.end) return months[m.start];
+          return `${months[m.start]} - ${months[m.end]}`;
+        })
+        .join(', ');
     },
 
     formattedTimes() {
