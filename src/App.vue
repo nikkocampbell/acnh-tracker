@@ -53,7 +53,7 @@
         </b-form-group>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="mb-3">
       <b-col>
         <b-button
           @click="saveState"
@@ -66,23 +66,35 @@
         <b-textarea v-model="exportContent" class="mt-3"/>
       </b-col>
     </b-row>
+
     <b-row>
       <b-col>
-        <h4>Fish</h4>
-        <b-card
-          v-for="f in fish"
-          :key="f.id"
-          v-show="shouldShowCatchable(f)"
-        >
-          <catchable :value="f" list="fish" :ignoreTime="ignoreTime" />
+        <b-card no-body>
+          <b-tabs card>
+            <b-tab title="Fish" active>
+              <b-card
+                v-for="f in fish"
+                :key="f.id"
+                v-show="shouldShowCatchable(f)"
+              >
+                <catchable :value="f" list="fish" :ignoreTime="ignoreTime" />
+              </b-card>
+            </b-tab>
+            <b-tab title="Bugs">
+              <b-card
+                v-for="b in bugs"
+                :key="b.id"
+                v-show="shouldShowCatchable(b)"
+              >
+                <catchable :value="b" list="bugs" :ignoreTime="ignoreTime" />
+              </b-card>
+            </b-tab>
+            <b-tab title="Fossils?" disabled>
+              <p>I'm a disabled tab!</p>
+            </b-tab>
+          </b-tabs>
         </b-card>
       </b-col>
-      <!-- <b-col>
-        <h4>Bugs</h4>
-      </b-col>
-      <b-col>
-        <h4>Fossils</h4>
-      </b-col> -->
     </b-row>
   </b-container>
 </template>
@@ -148,7 +160,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['fish']),
+    ...mapState(['fish', 'bugs']),
     ...mapGetters(['hour']),
 
     hemisphere: {
@@ -165,7 +177,7 @@ export default {
     },
   },
   created() {
-    this.loadState();
+    // this.loadState();
   },
 };
 </script>

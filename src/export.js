@@ -16,8 +16,7 @@ convert = (f) => {
     : f.time.split(' - ').map(convertTime);
 
   const allYear = f.months === 'Year-round (Northern and Southern)';
-  const [
-    ,
+  const [,
     northernStartMonth,
     northerEndMonth,
     southernStartMonth,
@@ -772,5 +771,3 @@ exports.data = [
     months: 'Year-round (Northern and Southern)',
   },
 ];
-
-exports.firstRound =

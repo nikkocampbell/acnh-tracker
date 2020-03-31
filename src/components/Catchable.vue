@@ -7,7 +7,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="2">
+      <b-col cols="4">
         <span>
           Months: {{ formattedMonths }}
         </span>
@@ -21,7 +21,7 @@
           Location: {{ value.location }}
         </span>
         <br />
-        <span>
+        <span v-if="value.size">
           Size: {{ value.size}}
         </span>
       </b-col>

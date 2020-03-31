@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import fishData from '../data/fish';
+import bugData from '../data/bugs';
 
 Vue.use(Vuex);
 
@@ -11,6 +12,11 @@ export default new Vuex.Store({
     month: 1,
     fish: fishData.map((f) => ({
       ...f,
+      caught: false,
+      canCatch: false,
+    })),
+    bugs: bugData.map((b) => ({
+      ...b,
       caught: false,
       canCatch: false,
     })),
