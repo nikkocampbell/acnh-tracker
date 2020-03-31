@@ -59,7 +59,7 @@
         >
           <catchable :value="f" list="fish"/>
         </b-card>
-      </h4>
+      </b-col>
       <!-- <b-col>
         <h4>Bugs</h4>
       </b-col>
