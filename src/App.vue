@@ -161,7 +161,7 @@ export default {
       this.exportContent = JSON.stringify(this.$store.state);
     },
     clear() {
-      const confirm = window.confirm('Are you sure? This will clear all data!');
+      const confirm = window.confirm('Are you sure? This will also clear saved data!');
       if (!confirm) return;
       localStorage.removeItem('state');
       window.location.reload();
